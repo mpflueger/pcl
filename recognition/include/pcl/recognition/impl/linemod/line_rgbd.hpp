@@ -119,7 +119,6 @@ pcl::LineRGBD<PointXYZT, PointRGBT>::loadTemplates (const std::string &file_name
       pcd_reader.read (file_name, template_point_clouds_[template_point_clouds_.size () - 1], ltm_offset);
 
       // Increment the offset for the next file
-      //ltm_offset += (ltm_header.getFileSize ()) + (512 - ltm_header.getFileSize () % 512);
       ltm_offset += (ltm_header.getFileSize ());
       if (ltm_header.getFileSize () % 512) {
         ltm_offset += (512 - ltm_header.getFileSize () % 512);
@@ -150,7 +149,6 @@ pcl::LineRGBD<PointXYZT, PointRGBT>::loadTemplates (const std::string &file_name
       object_ids_.push_back (object_id);
 
       // Increment the offset for the next file
-      //ltm_offset += (ltm_header.getFileSize ()) + (512 - ltm_header.getFileSize () % 512);
       ltm_offset += (ltm_header.getFileSize ());
       if (ltm_header.getFileSize () % 512) {
         ltm_offset += (512 - ltm_header.getFileSize () % 512);
